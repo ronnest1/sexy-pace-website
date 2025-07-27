@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import type { AstroSeoProps } from "@astrolib/seo";
-import Author from "@components/blog/Author.astro";
+import AuthorComponent from "@components/blog/Author.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -20,10 +20,10 @@ const author = Astro.props;
 const seo: AstroSeoProps = {
 	title: author.data.name,
 	description: author.data.description,
-	canonical: `https://mintaka.co/it/author/${author.slug}/`,
+	canonical: `https://mintaka.co/da/author/${author.slug}/`,
 };
 ---
 
 <BaseLayout seo={seo}>
-	<Author author={author} />
+	<AuthorComponent author={author} />
 </BaseLayout>

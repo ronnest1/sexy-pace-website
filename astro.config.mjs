@@ -11,6 +11,7 @@ export default defineConfig({
 			watch: {
 				usePolling: true,
 			},
+			allowedHosts: ['.ngrok.app']
 		},
 	},
 	site: "https://mintaka.co",
