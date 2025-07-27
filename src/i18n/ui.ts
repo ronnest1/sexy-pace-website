@@ -87,7 +87,7 @@ export const ui = {
 		"footer.newsletter2": "our newsletter",
 		"footer.yourmail": "Your email",
 	},
-	it: {
+	da: {
 		or: "o",
 		contact: "Contattaci",
 		contacts: "Contatti",
