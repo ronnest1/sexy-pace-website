@@ -13,7 +13,7 @@
 			"@pages/*": ["pages/*"],
 			"@assets/*": ["assets/*"],
 			"@locales/*": ["locales/*"],
-			"@i18n/*": ["i18n/*"],
-		},
+			"@i18n/*": ["i18n/*"]
+		}
 	},
 }

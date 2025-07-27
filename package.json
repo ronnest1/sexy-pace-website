@@ -28,7 +28,7 @@
 		"@astrojs/tailwind": "6.0.0",
 		"@cloudflare/pages-plugin-mailchannels": "0.1.5",
 		"astro": "5.3.0",
-		"gsap": "npm:@gsap/business@3.12.7",
+		"gsap": "^3.12.7",
 		"tailwindcss": "3.4.1"
 	},
 	"devDependencies": {
