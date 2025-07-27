@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import type { AstroSeoProps } from "@astrolib/seo";
-import Author from "@components/blog/Author.astro";
+import AuthorComponent from "@components/blog/Author.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -25,5 +25,5 @@ const seo: AstroSeoProps = {
 ---
 
 <BaseLayout seo={seo}>
-	<Author author={author} />
+	<AuthorComponent author={author} />
 </BaseLayout>

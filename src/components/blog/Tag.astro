@@ -6,7 +6,7 @@ import Title from "@components/global/Title.astro";
 
 interface Props {
 	tag: string;
-	posts: CollectionEntry<"posts">;
+	posts: CollectionEntry<"posts">[];
 }
 
 const { tag, posts } = Astro.props as Props;
