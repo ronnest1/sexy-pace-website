@@ -8,6 +8,9 @@ export const defaultLang = "en";
 export const ui = {
 	en: {
 		or: "or",
+		home: "Home",
+		shop: "Shop",
+		events: "Events",
 		contact: "Contact",
 		contacts: "Contacts",
 		contactus: "Contact us",
@@ -89,6 +92,9 @@ export const ui = {
 	},
 	da: {
 		or: "eller",
+		home: "Hjem",
+		shop: "Shop",
+		events: "Events",
 		contact: "Kontakt",
 		contacts: "Kontakt",
 		contactus: "Kontakt os",

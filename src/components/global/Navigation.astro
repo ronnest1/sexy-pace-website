@@ -13,8 +13,16 @@ const translatePath = useTranslatedPath(lang);
 
 let pages = [
 	{
-		title: "Home",
+		title: t("home"),
 		url: "/",
+	},
+	{
+		title: t("shop"),
+		url: "/shop/",
+	},
+	{
+		title: t("events"),
+		url: "/events/",
 	},
 	// {
 	// 	title: "Services",
@@ -110,8 +118,8 @@ const { pathname } = Astro.url;
 								<a href={translatePath(path, `${lang === "da" ? "en" : "da"}`)} class="inline-block cursor-pointer px-1 py-[0.33rem]">
 									<span class="menu-item-container inline-block">
 										<span
-											class="menu-item px-4 py-1 font-semibold uppercase tracking-wide text-zinc-400 hover:text-white focus:text-white focus:shadow-none focus:outline-none">
-											{lang === "en" ? "en" : "da"}
+											class="menu-item flag-emoji px-4 py-1 font-semibold uppercase tracking-wide focus:shadow-none focus:outline-none">
+											{lang === "en" ? "🇬🇧" : "🇩🇰"}
 										</span>
 									</span>
 								</a>
@@ -126,10 +134,10 @@ const { pathname } = Astro.url;
 
 <style>
 	.navigation {
-		mix-blend-mode: difference;
+		/* mix-blend-mode: difference; */
 	}
 	.navigation.navbar-open {
-		mix-blend-mode: luminosity;
+		/* mix-blend-mode: luminosity; */
 	}
 	.navigation,
 	.logo {
@@ -158,25 +166,29 @@ const { pathname } = Astro.url;
 	}
 	nav a .menu-item-container {
 		border-radius: 0.45rem;
-	}
-	nav a.active .menu-item-container,
-	nav a:hover .menu-item-container {
 		transition: background-color 0.3s ease;
 	}
-	nav ul:not(.collapsed) a.active .menu-item-container {
-		transition-duration: 0.5s;
-		background: #aaa;
+	nav a .menu-item {
+		color: #374151; /* Dark gray text */
+		transition: color 0.3s ease;
 	}
-	nav ul:not(.collapsed) a:hover .menu-item-container {
-		background: #fff;
+	nav a:hover .menu-item-container {
+		background: #ec4899; /* Pink background on hover */
 	}
-	nav ul:not(.collapsed) a.active .menu-item-container .menu-item,
-	nav ul:not(.collapsed) a:hover .menu-item-container .menu-item {
-		color: #000;
+	nav a:hover .menu-item {
+		color: white; /* White text on hover */
 	}
-	nav ul.collapsed a.active .menu-item-container .menu-item,
-	nav ul.collapsed a:hover .menu-item-container .menu-item {
-		color: #fff;
+	nav a.active .menu-item-container {
+		background: #374151; /* Dark gray background for active */
+	}
+	nav a.active .menu-item {
+		color: white; /* White text for active */
+	}
+	.nav-container {
+		background-color: #f3f4f6 !important; /* Light gray background */
+	}
+	.flag-emoji {
+		/* Remove isolation styles since we're not using mix-blend-mode anymore */
 	}
 </style>
 
