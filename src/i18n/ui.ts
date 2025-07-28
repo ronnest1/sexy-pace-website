@@ -5,11 +5,85 @@ export const languages = {
 
 export const defaultLang = "en";
 
-export const ui = {
+// Extract the type from the English translations as the source of truth
+type UIKeys = {
+	or: string;
+	home: string;
+	shop: string;
+	blog: string;
+	events: string;
+	contact: string;
+	contacts: string;
+	contactus: string;
+	projects: string;
+	services: string;
+	homepage: string;
+	tagline: string;
+	"projects.yours": string;
+	"projects.see": string;
+	"hero.title.main": string;
+	"hero.title.1": string;
+	"hero.title.2": string;
+	"hero.subtitle": string;
+	"hero.scroll": string;
+	"websites.title": string;
+	"apps.title": string;
+	"uiux.title": string;
+	"seo.title": string;
+	"advertising.title": string;
+	"websites.content": string;
+	"apps.content": string;
+	"uiux.content": string;
+	"seo.content": string;
+	"advertising.content": string;
+	"privacy.wip": string;
+	"privacy.wip.content": string;
+	"faqs.question1": string;
+	"faqs.answer1": string;
+	"faqs.question2": string;
+	"faqs.answer2": string;
+	"faqs.question3": string;
+	"faqs.answer3": string;
+	"faqs.question4": string;
+	"faqs.answer4": string;
+	"faqs.question5": string;
+	"faqs.answer5": string;
+	"faqs.question6": string;
+	"faqs.answer6": string;
+	"faqs.question7": string;
+	"faqs.answer7": string;
+	"faqs.question8": string;
+	"faqs.answer8": string;
+	"faqs.question9": string;
+	"faqs.answer9": string;
+	"faqs.question10": string;
+	"faqs.answer10": string;
+	"faq.otherquestions": string;
+	"thanks.subtitle": string;
+	"thanks.title": string;
+	"thanks.content": string;
+	"contact.title": string;
+	"contact.subtitle": string;
+	"contact.name": string;
+	"contact.email": string;
+	"contact.message": string;
+	"contact.company": string;
+	"contact.agree": string;
+	"contact.send": string;
+	"blog.title": string;
+	"blog.subtitle": string;
+	"blog.gotoproject": string;
+	"footer.newsletter": string;
+	"footer.newsletter2": string;
+	"footer.yourmail": string;
+};
+
+export const ui: Record<keyof typeof languages, UIKeys> = {
 	en: {
 		or: "or",
 		home: "Home",
 		shop: "Shop",
+		blog: "Blog",
 		events: "Events",
 		contact: "Contact",
 		contacts: "Contacts",
@@ -93,10 +167,11 @@ export const ui = {
 	da: {
 		or: "eller",
 		home: "Hjem",
-		shop: "Shop",
-		events: "Events",
+		shop: "Butik",
+		blog: "Blog",
+		events: "Begivenheder",
 		contact: "Kontakt",
-		contacts: "Kontakt",
+		contacts: "Kontakter",
 		contactus: "Kontakt os",
 		projects: "Projekter",
 		services: "Tjenester",

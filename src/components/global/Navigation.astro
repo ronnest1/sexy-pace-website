@@ -13,28 +13,24 @@ const translatePath = useTranslatedPath(lang);
 
 let pages = [
 	{
-		title: t("home"),
+		title: "home",
 		url: "/",
 	},
 	{
 		title: t("shop"),
-		url: "/shop/",
+		url: `/${t("shop").toLowerCase()}/`,
 	},
 	{
 		title: t("events"),
-		url: "/events/",
+		url: `/${t("events").toLowerCase()}/`
 	},
-	// {
-	// 	title: "Services",
-	// 	url: "/services",
-	// },
 	{
-		title: "Blog",
-		url: "/blog/",
+		title: t("blog"),
+		url: `/${t("blog").toLowerCase()}/`
 	},
 	{
 		title: t("contacts"),
-		url: "/contact/",
+		url: `/${t("contacts").toLowerCase()}/`	
 	},
 ];
 
@@ -119,7 +115,7 @@ const { pathname } = Astro.url;
 									<span class="menu-item-container inline-block">
 										<span
 											class="menu-item flag-emoji px-4 py-1 font-semibold uppercase tracking-wide focus:shadow-none focus:outline-none">
-											{lang === "en" ? "🇬🇧" : "🇩🇰"}
+											{lang === "en" ? "🇩🇰":"🇬🇧" }
 										</span>
 									</span>
 								</a>
@@ -200,14 +196,6 @@ const { pathname } = Astro.url;
 	gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 	function init() {
-		gsap.timeline({
-			defaults: {
-				duration: 1,
-				ease: "power2.out",
-			},
-		})
-			.from(".logo-svg path", { drawSVG: 0 })
-			.to(".logo-svg path", { fill: "#000", duration: 2 }, "<+=0.5");
 
 		let isHoveringMenu = false;
 		let menuCollapsed = false;
