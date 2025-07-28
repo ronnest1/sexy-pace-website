@@ -92,8 +92,8 @@ const { pathname } = Astro.url;
 											href={translatePath(page.url)}
 											class={`inline-block cursor-pointer px-1 py-[0.33rem] ${
 												page.url === pathname ||
-												page.url === pathname.replace(/^\/it|\/$/, "") ||
-												(page.url === "/blog" && (pathname.startsWith("/blog") || pathname.startsWith("/it/blog")))
+												page.url === pathname.replace(/^\/da|\/$/, "") ||
+												(page.url === "/blog" && (pathname.startsWith("/blog") || pathname.startsWith("/da/blog")))
 													? "active"
 													: ""
 											}`}>
@@ -224,9 +224,9 @@ const { pathname } = Astro.url;
 					x: () => {
 						const pathName = window.location.pathname;
 
-						if (pathName === "/" || pathName === "/it/") {
+						if (pathName === "/" || pathName === "/da/") {
 							return "9.5rem";
-						} else if (pathName.startsWith("/blog") || pathName.startsWith("/it/blog")) {
+						} else if (pathName.startsWith("/blog") || pathName.startsWith("/da/blog")) {
 							return "3.5rem";
 						}
 

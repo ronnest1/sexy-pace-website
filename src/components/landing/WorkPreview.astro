@@ -36,7 +36,7 @@ const allProjects = (await getCollection("projects"))
 					<WokCard
 						image={project.data.image.source}
 						project={project.data.title}
-						link={`/work/${project.slug}`}
+						link={translatePath(`/work/${project.slug}`)}
 						class={
 							index % 2 === 0
 								? `md:col-start-1 md:row-start-${Math.floor(index / 2) * 2 + 1} md:row-span-2`
