@@ -1,13 +1,14 @@
 ---
 import LinkBlend from "@components/global/LinkBlend.astro";
 import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
+import gruppeImg from "@/assets/images/authors/landing-1.jpg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<section id="hero" class="section home-dark-section hero min-h-screen">
+<section id="hero" class="section home-dark-section hero min-h-screen" style={`background-image: url(${gruppeImg.src}); background-size: cover; background-position: center top; background-repeat: no-repeat;`}>
 	<div class="mx-auto flex h-full flex-col py-4 lg:py-10">
 		<div class="relative flex flex-1 flex-col justify-around rounded-lg pb-10 pt-20 lg:rounded-2xl">
 			<div class="flex justify-center">
@@ -56,8 +57,20 @@ const translatePath = useTranslatedPath(lang);
 		border-radius: inherit;
 		overflow: hidden;
 	}
+	.hero::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, rgba(248, 250, 252, 0.2) 0%, rgba(248, 250, 252, 0.4) 60%, rgba(248, 250, 252, 0.85) 85%, rgba(248, 250, 252, 1) 100%);
+		z-index: 1;
+	}
 	.hero > div {
 		grid-column: 1 / span 12;
+		position: relative;
+		z-index: 2;
 	}
 
 	/* Hero appearance */
