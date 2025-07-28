@@ -1,0 +1,46 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Sexy Pace Events - Join Our Running Community",
+	description:
+		"Join exciting running events and communities. From weekly training sessions to major races - find your next adventure.",
+	canonical: "https://sexypace.com/events/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<section class="section min-h-screen">
+		<div class="wrapper col-span-12 py-32">
+			<div class="mx-auto max-w-4xl text-center">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">Events</h1>
+				<p class="mt-8 text-xl text-gray-600">
+					Join our running community and participate in exciting events. From beginner-friendly sessions to challenging races.
+				</p>
+				<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Weekly Training</h3>
+						<p class="mt-4 text-gray-600">Regular group training sessions for all levels</p>
+						<p class="mt-2 text-sm text-gray-500">Every Tuesday & Thursday, 6:00 PM</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Monthly Races</h3>
+						<p class="mt-4 text-gray-600">Competitive races and fun runs</p>
+						<p class="mt-2 text-sm text-gray-500">First Saturday of every month</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Workshops</h3>
+						<p class="mt-4 text-gray-600">Running technique and nutrition seminars</p>
+						<p class="mt-2 text-sm text-gray-500">Monthly workshops</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Charity Runs</h3>
+						<p class="mt-4 text-gray-600">Run for a cause and make a difference</p>
+						<p class="mt-2 text-sm text-gray-500">Quarterly charity events</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

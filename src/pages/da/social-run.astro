@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Sexy Pace Social Run - Deltag i Vores Løbegrupper",
+	description:
+		"Deltag i vores sociale løbegrupper og byg forbindelser. Find din løbepartner eller gruppe uanset dit niveau.",
+	canonical: "https://sexypace.com/da/social-run/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<section class="section min-h-screen">
+		<div class="wrapper col-span-12 py-32">
+			<div class="mx-auto max-w-4xl text-center">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">Social Run</h1>
+				<p class="mt-8 text-xl text-gray-600">
+					Deltag i vores fællesskab af løbere der mødes regelmæssigt. Byg venskaber og motivation gennem løb sammen.
+				</p>
+				<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Begyndergrupper</h3>
+						<p class="mt-4 text-gray-600">Perfekt for nye løbere der lige er startet</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Distanceløb</h3>
+						<p class="mt-4 text-gray-600">For marathonentusiaster og langdistance-elskere</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Speed Træning</h3>
+						<p class="mt-4 text-gray-600">Interval træning og speedwork sessioner</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Trail Running</h3>
+						<p class="mt-4 text-gray-600">Udforsk naturen på stier og ruter</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Morgenløb</h3>
+						<p class="mt-4 text-gray-600">Start dagen med energi og positivitet</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Aftensessioner</h3>
+						<p class="mt-4 text-gray-600">Slap af efter arbejde med vores aftengrupper</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

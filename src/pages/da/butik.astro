@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Sexy Pace Butik - Premium Løbeudstyr & Merchandise",
+	description:
+		"Shop det bedste løbeudstyr, tøj og accessories. Fra high-performance sko til stylish merchandise - alt hvad du har brug for til din løbetur.",
+	canonical: "https://sexypace.com/da/butik/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<section class="section min-h-screen">
+		<div class="wrapper col-span-12 py-32">
+			<div class="mx-auto max-w-4xl text-center">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">Butik</h1>
+				<p class="mt-8 text-xl text-gray-600">
+					Premium løbeudstyr og merchandise kommer snart. Find alt hvad du har brug for til dit næste løb.
+				</p>
+				<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Løbesko</h3>
+						<p class="mt-4 text-gray-600">High-performance sko til alle terræner og distancer</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Tøj</h3>
+						<p class="mt-4 text-gray-600">Teknisk løbetøj til mænd og kvinder</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Accessories</h3>
+						<p class="mt-4 text-gray-600">GPS-ure, pulsmålere og meget mere</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

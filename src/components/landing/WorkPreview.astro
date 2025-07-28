@@ -32,18 +32,37 @@ const allProjects = (await getCollection("projects"))
 		<h2 class="sr-only">{t("projects")}</h2>
 		<ol class="grid grid-cols-1 gap-24 md:grid-cols-2 lg:gap-44">
 			{
-				allProjects.map((project, index) => (
-					<WokCard
-						image={project.data.image.source}
-						project={project.data.title}
-						link={translatePath(`/work/${project.slug}`)}
-						class={
-							index % 2 === 0
-								? `md:col-start-1 md:row-start-${Math.floor(index / 2) * 2 + 1} md:row-span-2`
-								: `md:col-start-2 md:row-start-${Math.floor(index / 2) * 2 + 2} md:row-span-2`
+				allProjects.map((project, index) => {
+					// Map project titles to their corresponding CTA texts
+					const getCtaText = (title: string) => {
+						switch (title.toLowerCase()) {
+							case "blog":
+								return t("projects.blog");
+							case "events":
+								return t("projects.events");
+							case "shop":
+								return t("projects.shop");
+							case "social run":
+								return t("projects.socialrun");
+							default:
+								return t("projects.see");
 						}
-					/>
-				))
+					};
+
+					return (
+						<WokCard
+							image={project.data.image.source}
+							project={project.data.title}
+							link={project.data.link}
+							ctaText={getCtaText(project.data.title)}
+							class={
+								index % 2 === 0
+									? `md:col-start-1 md:row-start-${Math.floor(index / 2) * 2 + 1} md:row-span-2`
+									: `md:col-start-2 md:row-start-${Math.floor(index / 2) * 2 + 2} md:row-span-2`
+							}
+						/>
+					);
+				})
 			}
 		</ol>
 	</div>

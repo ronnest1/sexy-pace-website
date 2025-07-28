@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Sexy Pace Social Run - Join Our Running Groups",
+	description:
+		"Join our social running groups and build connections. Find your running partner or group regardless of your level.",
+	canonical: "https://sexypace.com/social-run/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<section class="section min-h-screen">
+		<div class="wrapper col-span-12 py-32">
+			<div class="mx-auto max-w-4xl text-center">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">Social Run</h1>
+				<p class="mt-8 text-xl text-gray-600">
+					Join our community of runners who meet regularly. Build friendships and motivation through running together.
+				</p>
+				<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Beginner Groups</h3>
+						<p class="mt-4 text-gray-600">Perfect for new runners just starting their journey</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Distance Running</h3>
+						<p class="mt-4 text-gray-600">For marathon enthusiasts and long-distance lovers</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Speed Training</h3>
+						<p class="mt-4 text-gray-600">Interval training and speedwork sessions</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Trail Running</h3>
+						<p class="mt-4 text-gray-600">Explore nature on trails and paths</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Morning Runs</h3>
+						<p class="mt-4 text-gray-600">Start your day with energy and positivity</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Evening Sessions</h3>
+						<p class="mt-4 text-gray-600">Unwind after work with our evening groups</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

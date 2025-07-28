@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Sexy Pace Shop - Premium Running Gear & Merchandise",
+	description:
+		"Shop the best running gear, apparel and accessories. From high-performance shoes to stylish merchandise - everything you need for your run.",
+	canonical: "https://sexypace.com/shop/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<section class="section min-h-screen">
+		<div class="wrapper col-span-12 py-32">
+			<div class="mx-auto max-w-4xl text-center">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">Shop</h1>
+				<p class="mt-8 text-xl text-gray-600">
+					Premium running gear and merchandise coming soon. Find everything you need for your next run.
+				</p>
+				<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Running Shoes</h3>
+						<p class="mt-4 text-gray-600">High-performance shoes for all terrains and distances</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Apparel</h3>
+						<p class="mt-4 text-gray-600">Technical running clothing for men and women</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Accessories</h3>
+						<p class="mt-4 text-gray-600">GPS watches, heart rate monitors and more</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

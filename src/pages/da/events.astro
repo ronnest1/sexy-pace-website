@@ -1,0 +1,46 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Sexy Pace Events - Deltag i Vores Løbefællesskab",
+	description:
+		"Deltag i spændende løbeevents og fællesskaber. Fra ugentlige træninger til store løb - find dit næste eventyr.",
+	canonical: "https://sexypace.com/da/events/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<section class="section min-h-screen">
+		<div class="wrapper col-span-12 py-32">
+			<div class="mx-auto max-w-4xl text-center">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">Events</h1>
+				<p class="mt-8 text-xl text-gray-600">
+					Deltag i vores løbefællesskab og vær med til spændende events. Fra begyndervenlige sessioner til udfordrende løb.
+				</p>
+				<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Ugentlig Træning</h3>
+						<p class="mt-4 text-gray-600">Regelmæssige gruppetræninger for alle niveauer</p>
+						<p class="mt-2 text-sm text-gray-500">Hver tirsdag & torsdag, kl. 18:00</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Månedlige Løb</h3>
+						<p class="mt-4 text-gray-600">Konkurrenceløb og sjove løb</p>
+						<p class="mt-2 text-sm text-gray-500">Første lørdag hver måned</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Workshops</h3>
+						<p class="mt-4 text-gray-600">Løbeteknik og ernæringsseminarer</p>
+						<p class="mt-2 text-sm text-gray-500">Månedlige workshops</p>
+					</div>
+					<div class="rounded-lg bg-gray-100 p-8">
+						<h3 class="text-xl font-semibold">Charity Løb</h3>
+						<p class="mt-4 text-gray-600">Løb for en god sag og gør en forskel</p>
+						<p class="mt-2 text-sm text-gray-500">Kvartalsvise charity events</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

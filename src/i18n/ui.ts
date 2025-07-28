@@ -21,6 +21,10 @@ type UIKeys = {
 	tagline: string;
 	"projects.yours": string;
 	"projects.see": string;
+	"projects.blog": string;
+	"projects.events": string;
+	"projects.shop": string;
+	"projects.socialrun": string;
 	"hero.title.main": string;
 	"hero.title.1": string;
 	"hero.title.2": string;
@@ -95,6 +99,10 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 			"Our aim is to make your website a key driver for sales and conversions, combining engaging design, easy navigation, and strong SEO. We focus on attracting visitors and leading them effortlessly to purchase, ensuring your products shine. Your success is our mission.",
 		"projects.yours": "Your project",
 		"projects.see": "See project",
+		"projects.blog": "Read all articles",
+		"projects.events": "See all events", 
+		"projects.shop": "Visit shop",
+		"projects.socialrun": "Join social run",
 		"hero.title.main": "Run with",
 		"hero.title.1": "SEXY",
 		"hero.title.2": "PACE",
@@ -180,6 +188,10 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 			"Vores mål er at forvandle din hjemmeside til en kraftfuld katalysator for salg og konverteringer, der kombinerer fængslende design med intuitiv navigation og effektiv SEO. Vi sigter mod at fange besøgendes opmærksomhed og guide dem problemfrit mod køb, samtidig med at vi sikrer, at dine produkter skiller sig ud. Dit succes er kernen i vores mission.",
 		"projects.yours": "Dit projekt",
 		"projects.see": "Se projekt",
+		"projects.blog": "Læs alle artikler",
+		"projects.events": "Se alle events",
+		"projects.shop": "Besøg butik", 
+		"projects.socialrun": "Deltag i social run",
 		"hero.title.main": "Løb med",
 		"hero.title.1": "SEXY",
 		"hero.title.2": "PACE",
