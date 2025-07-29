@@ -118,7 +118,7 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 		services: "Services",
 		homepage: "Homepage",
 		tagline:
-			"Our aim is to make your website a key driver for sales and conversions, combining engaging design, easy navigation, and strong SEO. We focus on attracting visitors and leading them effortlessly to purchase, ensuring your products shine. Your success is our mission.",
+			"Join the rhythm of the streets. We don't just run, we create a movement where every stride builds strength, every pace tells a story, and every runner finds their sexy speed. Together, we turn the city into our playground and make every run an adventure.",
 		"projects.yours": "Your project",
 		"projects.see": "See project",
 		"projects.blog": "Read all articles",
@@ -225,7 +225,7 @@ Sexy pace: where you sweat a little but still look great in photos.`,
 		services: "Tjenester",
 		homepage: "Hjemmeside",
 		tagline:
-			"Vores mål er at forvandle din hjemmeside til en kraftfuld katalysator for salg og konverteringer, der kombinerer fængslende design med intuitiv navigation og effektiv SEO. Vi sigter mod at fange besøgendes opmærksomhed og guide dem problemfrit mod køb, samtidig med at vi sikrer, at dine produkter skiller sig ud. Dit succes er kernen i vores mission.",
+			"Deltag i gadens rytme. Vi løber ikke bare, vi skaber en bevægelse hvor hvert skridt opbygger styrke, hvert tempo fortæller en historie, og hver løber finder sin sexede fart. Sammen forvandler vi byen til vores legeplads og gør hvert løb til et eventyr.",
 		"projects.yours": "Dit projekt",
 		"projects.see": "Se projekt",
 		"projects.blog": "Læs alle artikler",
