@@ -10,9 +10,12 @@ const { image, project, link, description, ctaText, class: className } = Astro.p
 ---
 
 <li class:list={["flex flex-col", className]}>
-	<a href={link} aria-label={`Project ${project}`}>
-		<Image class="h-[25rem] rounded-md object-cover lg:rounded-lg" src={image} alt={project} />
-	</a>
+	<div class="relative">
+		<div class="absolute inset-0 bg-pink-100 blur-sm rounded-md lg:rounded-lg transform scale-105"></div>
+		<a href={link} aria-label={`Project ${project}`} class="relative block p-2">
+			<Image class="h-[25rem] rounded-md object-cover lg:rounded-lg" src={image} alt={project} />
+		</a>
+	</div>
 	<div class="px-2 py-8">
 		<a href={link} class="flex items-center justify-between text-base font-medium lg:gap-x-8">
 			<h3 class="font-mono text-xl font-bold uppercase tracking-wide md:mt-0 lg:text-2xl">
