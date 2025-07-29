@@ -15,10 +15,10 @@ const { image, project, link, description, ctaText, class: className } = Astro.p
 	</a>
 	<div class="px-2 py-8">
 		<a href={link} class="flex items-center justify-between text-base font-medium lg:gap-x-8">
-			<h3 class="font-mono text-lg font-medium uppercase tracking-wide md:mt-0 lg:text-xl">
+			<h3 class="font-mono text-xl font-bold uppercase tracking-wide md:mt-0 lg:text-2xl">
 				{project}
 			</h3>
-			<span class="text-right text-base hover:text-primary-700">
+			<span class="text-right text-base hover:text-pink-500">
 				<span class="hidden lg:inline-block">{ctaText || t("projects.see")}</span>
 				<span class="sr-only">{project}</span> &nbsp; &rarr;
 			</span>
