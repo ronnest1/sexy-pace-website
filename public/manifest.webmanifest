@@ -4,9 +4,9 @@
 	"display": "standalone",
 	"scope": "/",
 	"start_url": "/",
-	"description": "Web Agency Leading in Performant Web Design Solutions - Mintaka Studio",
-	"name": "Mintaka",
-	"short_name": "Mintaka",
+	"description": "Sexy Pace is a community-driven cycling event that brings together enthusiasts to celebrate the joy of cycling and promote a healthy lifestyle.",
+	"name": "Sexy Pace",
+	"short_name": "Sexy Pace",
 	"icons": [
 		{
 			"src": "/pwa-64x64.png",
