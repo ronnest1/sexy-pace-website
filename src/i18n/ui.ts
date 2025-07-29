@@ -80,11 +80,33 @@ type UIKeys = {
 	"footer.newsletter": string;
 	"footer.newsletter2": string;
 	"footer.yourmail": string;
+
+	// EVENTS
+	"events.title": string;
+	"events.subtitle": string;
+"events.2026.title":string;
+"events.marathon.title":string;
+"events.marathon.date":string;
+"events.marathon.description":string;
+"events.halfmarathon.title":string;
+"events.halfmarathon.date":string;
+"events.halfmarathon.description":string;
+"events.10km.title":string;
+"events.10km.date":string;
+"events.10km.description":string;
+"events.pace.title":string;
+"events.pace.date":string;
+"events.pace.description":string;
+"events.register":string;
+"events.moreinfo":string;
+
+
+
 };
 
 export const ui: Record<keyof typeof languages, UIKeys> = {
 	en: {
-		or: "or",
+		or: "eller",
 		home: "Home",
 		shop: "Shop",
 		blog: "Blog",
@@ -109,8 +131,9 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 		// "hero.title.3": "designs",
 		// "hero.title.4": "brands",
 		"hero.subtitle":
-			"Our digital agency specializes in crafting captivating websites that convert and sell. Contact us for a free consultation.",
-		"hero.scroll": "scroll down to explore more",
+			`No chasing personal records, just good vibes and maybe a croissant after.
+Sexy pace: where you sweat a little but still look great in photos.`,
+		"hero.scroll": "scroll to discover more",
 		"websites.title": "Websites",
 		"apps.title": "Apps",
 		"uiux.title": "UI/UX Design",
@@ -171,6 +194,23 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 		"footer.newsletter": "Subscribe to",
 		"footer.newsletter2": "our newsletter",
 		"footer.yourmail": "Your email",
+		"events.title": "Events",
+		"events.subtitle": "Join exciting running events and communities. From weekly training sessions to major races - find your next adventure.",
+		"events.2026.title": "2026 Sexy Pace Events",
+		"events.marathon.title": "Marathon",
+		"events.marathon.date": "June 15, 2026",
+		"events.marathon.description": "The ultimate challenge - 42.195km of pure determination and sexy pace.",
+		"events.halfmarathon.title": "Half Marathon",
+		"events.halfmarathon.date": "April 20, 2026",
+		"events.halfmarathon.description": "Perfect distance for those who want a serious challenge without going full crazy.",
+		"events.10km.title": "10K Run",
+		"events.10km.date": "March 8, 2026",
+		"events.10km.description": "Fast, fun, and accessible for runners of all levels. Great for testing your pace!",
+		"events.pace.title": "Test Din Pace Competition",
+		"events.pace.date": "May 10, 2026",
+		"events.pace.description": "Can you nail a 6:00 pace? The ultimate precision challenge - closest to exactly 6 min/km wins!",
+		"events.register": "Register Now",
+		"events.moreinfo": "More Info",
 	},
 	da: {
 		or: "eller",
@@ -196,8 +236,9 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 		"hero.title.1": "SEXY",
 		"hero.title.2": "PACE",
 		"hero.subtitle":
-			"Forvandl din vision til virkelighed med vores digitale bureau. Specialiseret i innovative hjemmesider, der fanger opmærksomhed og maksimerer salg, er vi klar til at løfte dit brand. Tag fordel af vores gratis konsultation for at komme i gang.",
-		"hero.scroll": "scroll for at opdage mere",
+`Du må gerne svede lidt, men vigtigst af alt, så skal du se godt ud på billeder under hele turen.`,
+		"hero.scroll": "rulle rulle for at opdage mere",
+
 		"websites.title": "Hjemmesider",
 		"apps.title": "Apps",
 		"uiux.title": "UI/UX Design",
@@ -261,6 +302,23 @@ export const ui: Record<keyof typeof languages, UIKeys> = {
 		"footer.newsletter": "Tilmeld dig",
 		"footer.newsletter2": "vores nyhedsbrev",
 		"footer.yourmail": "Din e-mail",
+		"events.title": "Events",
+		"events.subtitle": "Deltag i spændende løbeevents og fællesskaber. Fra ugentlige træninger til store løb - find dit næste eventyr.",
+		"events.2026.title": "2026 Sexy Pace Events",
+		"events.marathon.title": "Marathon",
+		"events.marathon.date": "15. juni 2026",
+		"events.marathon.description": "Den ultimative udfordring - 42,195 km ren vilje og sexy pace.",
+		"events.halfmarathon.title": "Halvmarathon",
+		"events.halfmarathon.date": "20. april 2026",
+		"events.halfmarathon.description": "Perfekt distance for dem, der vil have en seriøs udfordring uden at gå helt amok.",
+		"events.10km.title": "10 km løb",
+		"events.10km.date": "8. marts 2026",
+		"events.10km.description": "Hurtig, sjov og tilgængelig for løbere på alle niveauer. Perfekt til at teste din pace!",
+		"events.pace.title": "Test Din Pace Konkurrence",
+		"events.pace.date": "10. maj 2026",
+		"events.pace.description": "Kan du ramme præcis 6:00 pace? Den ultimative præcisions-udfordring - tættest på 6 min/km vinder!",
+		"events.register": "Tilmeld Nu",
+		"events.moreinfo": "Mere Info",
 	},
 } as const;
 
