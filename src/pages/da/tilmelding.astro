@@ -1,0 +1,16 @@
+---
+import ContactForm from "@/components/forms/Contact.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { AstroSeoProps } from "@astrolib/seo";
+
+const seo: AstroSeoProps = {
+	title: "Kontakt Majestico Studio: Kom i kontakt for innovative webløsninger",
+	description:
+		"Kontakt Majestico Studio for ekspert webdesign og SEO-tjenester. Kontakt os for at diskutere dit projekt og udforske banebrydende webløsninger.",
+	canonical: "https://mintaka.co/da/contact/",
+};
+---
+
+<BaseLayout seo={seo}>
+	<ContactForm />
+</BaseLayout>
