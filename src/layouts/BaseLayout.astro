@@ -65,10 +65,10 @@ const seo = {
 	...seoProp,
 };
 
-function cursorFollowerActive() {
-	const paths = ["", "/", "/da/", "/da"];
-	return paths.includes(pathname);
-}
+// function cursorFollowerActive() {
+// 	const paths = ["", "/", "/da/", "/da"];
+// 	return paths.includes(pathname);
+// }
 ---
 
 <html lang={lang}>
@@ -79,7 +79,7 @@ function cursorFollowerActive() {
 	<body class="bg-slate-50">
 		<BackgroundTexture />
 		<Navigation />
-		{cursorFollowerActive() && <BlobCursorFollower />}
+		<!-- {cursorFollowerActive() && <BlobCursorFollower />} -->
 		<slot />
 		<Footer />
 	</body>
