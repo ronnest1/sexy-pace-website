@@ -14,7 +14,7 @@ export default defineConfig({
 			allowedHosts: ['.ngrok.app']
 		},
 	},
-	site: "https://mintaka.co",
+	site: "https://mintaka.co", // TODO: Update this to your actual site URL
 	markdown: {
 		drafts: true,
 		shikiConfig: {
