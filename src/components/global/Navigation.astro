@@ -16,22 +16,19 @@ let pages = [
 		title: t("home"),
 		url: "/",
 	},
-	{
-		title: t("shop"),
-		url: `/${t("shop").toLowerCase()}/`,
-	},
+	// {
+	// 	title: t("shop"),
+	// 	url: `/${t("shop").toLowerCase()}/`,
+	// },
 	{
 		title: t("events"),
 		url: `/${t("events").toLowerCase()}/`
 	},
-	{
-		title: t("blog"),
-		url: `/${t("blog").toLowerCase()}/`
-	},
-	{
-		title: t("contact"),
-		url: `/${t("contact").toLowerCase()}/`	
-	},
+	// {
+	// 	title: t("blog"),
+	// 	url: `/${t("blog").toLowerCase()}/`
+	// },
+	// Replaced the previous "contact/register" tab with Clerk auth button rendered client-side
 ];
 
 // if (isDev) {
@@ -110,6 +107,16 @@ const { pathname } = Astro.url;
 									</li>
 								))
 							}
+							<!-- Auth Button (Clerk) -->
+							<li>
+								<button id="auth-btn" type="button" class="inline-block cursor-pointer px-1 py-[0.33rem]" aria-haspopup="dialog">
+									<span class="menu-item-container inline-block">
+										<span class="menu-item px-4 py-1 font-semibold uppercase tracking-wide text-zinc-400 hover:text-white focus:text-white">
+											Sign in
+										</span>
+									</span>
+								</button>
+							</li>
 							<li>
 								<a href={translatePath(path, `${lang === "da" ? "en" : "da"}`)} class="inline-block cursor-pointer px-1 py-[0.33rem]">
 									<span class="menu-item-container inline-block">
@@ -160,24 +167,24 @@ const { pathname } = Astro.url;
 	.collapsed .resizable:before {
 		opacity: 1;
 	}
-	nav a .menu-item-container {
+	nav a .menu-item-container, nav button .menu-item-container {
 		border-radius: 0.45rem;
 		transition: background-color 0.3s ease;
 	}
-	nav a .menu-item {
+	nav a .menu-item, nav button .menu-item {
 		color: #374151; /* Dark gray text */
 		transition: color 0.3s ease;
 	}
-	nav a:hover .menu-item-container {
+	nav a:hover .menu-item-container, nav button:hover .menu-item-container {
 		background: #ec4899; /* Pink background on hover */
 	}
-	nav a:hover .menu-item {
+	nav a:hover .menu-item, nav button:hover .menu-item {
 		color: white; /* White text on hover */
 	}
-	nav a.active .menu-item-container {
+	nav a.active .menu-item-container, nav button.active .menu-item-container {
 		background: #374151; /* Dark gray background for active */
 	}
-	nav a.active .menu-item {
+	nav a.active .menu-item, nav button.active .menu-item {
 		color: white; /* White text for active */
 	}
 	.nav-container {
@@ -196,6 +203,38 @@ const { pathname } = Astro.url;
 	gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 	function init() {
+		// Clerk Auth init
+		const pk = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+		const authBtn = document.getElementById("auth-btn");
+		if (pk && authBtn) {
+			const script = document.createElement("script");
+			script.setAttribute("data-clerk-publishable-key", pk);
+			script.src = "https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
+			script.async = true;
+				script.addEventListener("load", async () => {
+					// @ts-ignore
+					const Clerk = window.Clerk;
+					await Clerk.load();
+					function renderAuth() {
+						const btn = document.getElementById("auth-btn") as HTMLButtonElement | null;
+						if (!btn) return;
+						const isSignedIn = !!Clerk.user;
+						const label = isSignedIn ? "Account" : "Sign in";
+						btn.querySelector(".menu-item")?.replaceChildren(document.createTextNode(label));
+						btn.onclick = () => {
+							if (isSignedIn) {
+								Clerk.openUserProfile();
+							} else {
+								Clerk.openSignIn();
+							}
+						};
+					}
+					// Re-render on auth changes
+					Clerk.addListener(renderAuth);
+					renderAuth();
+				});
+			document.head.appendChild(script);
+		}
 
 		let isHoveringMenu = false;
 		let menuCollapsed = false;

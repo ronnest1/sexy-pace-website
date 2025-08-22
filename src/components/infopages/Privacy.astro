@@ -1,20 +1,24 @@
 ---
 import Title from "@components/global/Title.astro";
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 ---
 
 <section>
 	<div class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-32 lg:py-32">
 		<div>
-			<Title title="Privacy" subtitle="Last updated 01. Jan 2024" class="pb-10 pt-20 uppercase" />
+			<Title title={t("privacy.title")} subtitle={t("privacy.updated")} class="pb-10 pt-20 uppercase" />
 		</div>
 		<div class="prose-styles mt-12 lg:mt-24">
-			<h2 id="shine-the-light-disclosure">{t("privacy.wip")}</h2>
-			<p>{t("privacy.wip.content")}</p>
+			<p>{t("privacy.intro")}</p>
+			<h3>Data we collect</h3>
+			<p>{t("privacy.data")}</p>
+			<h3>Cookies</h3>
+			<p>{t("privacy.cookies")}</p>
+			<h3>Contact</h3>
+			<p>{t("privacy.contact")}</p>
 		</div>
 	</div>
 </section>

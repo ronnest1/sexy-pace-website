@@ -1,7 +1,5 @@
 ---
-import Newsletter from "@components/blog/Newsletter.astro";
 import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
-import { Icon } from "astro-icon/components";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,16 +10,26 @@ const translatePath = useTranslatedPath(lang);
 	<div class="relative flex-grow"></div>
 	<div class="relative grid grid-cols-6 gap-y-20 lg:grid-cols-12 lg:text-xl">
 		<div class="col-span-6 col-start-1 grid grid-cols-6 gap-6 lg:col-span-8">
-			<div class="col-span-2 col-start-4 flex flex-col gap-2 lg:col-span-3">
-				<a href="https://twitter.com//" target="_blank">Twitter / X</a>
-				<a href="https://www.instagram.com//" target="_blank">Instagram</a>
-				<a href="https://www.linkedin.com/" target="_blank">Linkedin</a>
-				<a href="https://tiktok.com/" target="_blank">TikTok</a>
+			<!-- Social: replaced with a single Instagram icon link -->
+			<div class="col-span-2 col-start-4 flex items-center gap-3 lg:col-span-3">
+				<a
+					href="https://www.instagram.com/sexypaceaarhus/?hl=en"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Instagram: Sexy Pace Aarhus"
+					class="inline-flex items-center justify-center rounded-full p-2 text-pink-600 hover:text-pink-500">
+					<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+						<circle cx="12" cy="12" r="4"></circle>
+						<circle cx="17" cy="7" r="1"></circle>
+					</svg>
+				</a>
+				<span class="text-base lg:text-lg">{t("footer.instagram")}</span>
 			</div>
 			<div class="col-span-3 row-start-1 lg:col-span-2 lg:col-start-4 lg:row-start-auto">
 				<div class="flex flex-col gap-2">
 					<a href={translatePath("/")}>Home</a>
-					<a href={translatePath("/blog/")}>Blog</a>
+					<!-- <a href={translatePath("/blog/")}>Blog</a> -->
 					<!-- <a href={translatePath("/tags/")}>Tags</a> -->
 					<a href={translatePath("/contact/")}>{t("contact")}</a>
 					<a href={translatePath("/terms/")}>Terms</a>
@@ -29,18 +37,15 @@ const translatePath = useTranslatedPath(lang);
 					<!-- <a href={translatePath("/rss.xml")}>RSS</a> -->
 				</div>
 			</div>
-			<div class="col-span-3 mt-10 lg:col-start-4">
-				<div class="relative flex flex-col overflow-hidden"></div>
-				<div class="relative mt-1 flex h-8 flex-col overflow-hidden">
-					<a href="mailto:test@mintaka.co" class="block cursor-pointer overflow-hidden">test@mintaka.co</a>
-				</div>
-			</div>
+			<!-- Email removed per request -->
 		</div>
 		<div class="col-span-6 row-start-1 text-5xl leading-tight lg:col-span-4 lg:row-start-auto lg:text-6xl">
-			<!-- Newsletter Section -->
+			<!-- Newsletter Section commented out per request -->
+			<!--
 			<div>{t("footer.newsletter")}</div>
 			<div>{t("footer.newsletter2")}</div>
 			<Newsletter />
+			-->
 		</div>
 	</div>
 	<div class="relative mt-4 flex w-full items-end justify-between gap-y-4 text-sm lg:text-xl lg:font-normal">

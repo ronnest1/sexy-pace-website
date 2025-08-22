@@ -19,12 +19,10 @@ const seo: AstroSeoProps = {
 		<div class="wrapper col-span-12 py-32">
 			<div class="mx-auto max-w-6xl text-center">
 				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">{t("events.title")}</h1>
-				<p class="mt-8 text-xl text-gray-600">
-					{t("events.subtitle")}
-				</p>
+				<div id="events-auth-gate" class="mt-8 text-xl text-gray-600"></div>
 				
 				<!-- 2026 Events Section -->
-				<div class="mt-16">
+				<div id="events-content" class="mt-16 hidden">
 					<h2 class="font-display text-3xl font-bold md:text-4xl mb-12">{t("events.2026.title")}</h2>
 					
 					<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
@@ -93,3 +91,48 @@ const seo: AstroSeoProps = {
 		</div>
 	</section>
 </BaseLayout>
+
+<script>
+	const pk = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+	const gate = document.getElementById("events-auth-gate");
+	const content = document.getElementById("events-content");
+	// @ts-ignore - Clerk comes from window and is dynamically typed
+	function renderGate(Clerk) {
+		const isSignedIn = !!Clerk?.user;
+		if (!gate || !content) return;
+		if (!isSignedIn) {
+			gate.innerHTML = `
+				<div class="mx-auto max-w-2xl text-left">
+					<p class="text-gray-700">Events are visible to members only. Sign up for free to join our runs.</p>
+					<div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
+						<button id="login-btn" class="rounded-full bg-pink-600 px-6 py-2 text-white hover:bg-pink-500">Log in</button>
+						<button id="register-btn" class="rounded-full border border-pink-600 px-6 py-2 text-pink-600 hover:bg-pink-50">Register</button>
+					</div>
+				</div>`;
+			content.classList.add("hidden");
+			const loginBtn = document.getElementById("login-btn");
+			const registerBtn = document.getElementById("register-btn");
+			if (loginBtn && registerBtn && Clerk) {
+				loginBtn.addEventListener("click", () => Clerk.openSignIn());
+				registerBtn.addEventListener("click", () => Clerk.openSignUp());
+			}
+		} else {
+			gate.innerHTML = "";
+			content.classList.remove("hidden");
+		}
+	}
+	if (pk) {
+		const script = document.createElement("script");
+		script.setAttribute("data-clerk-publishable-key", pk);
+		script.src = "https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
+		script.async = true;
+		script.addEventListener("load", async () => {
+			// @ts-ignore
+			const Clerk = window.Clerk;
+			await Clerk.load();
+			Clerk.addListener(() => renderGate(Clerk));
+			renderGate(Clerk);
+		});
+		document.head.appendChild(script);
+	}
+</script>

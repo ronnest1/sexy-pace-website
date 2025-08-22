@@ -80,6 +80,7 @@ type UIKeys = {
 	"footer.newsletter": string;
 	"footer.newsletter2": string;
 	"footer.yourmail": string;
+	"footer.instagram": string;
 
 	// EVENTS
 	"events.title": string;
@@ -101,6 +102,22 @@ type UIKeys = {
 "events.moreinfo":string;
 
 
+	// Privacy minimal content
+	"privacy.title": string;
+	"privacy.updated": string;
+	"privacy.intro": string;
+	"privacy.data": string;
+	"privacy.cookies": string;
+	"privacy.contact": string;
+
+	// Terms minimal content
+	"terms.title": string;
+	"terms.updated": string;
+	"terms.intro": string;
+	"terms.use": string;
+	"terms.liability": string;
+	"terms.changes": string;
+	"terms.contact": string;
 
 };
 
@@ -146,6 +163,20 @@ Sexy pace: where you sweat a little but still look great in photos.`,
 		"advertising.content": "Our advertising services aim to maximize your ROI through targeted and effective ad campaigns. We specialize in creating compelling ad content and strategies that resonate with your audience, utilizing various platforms like Google Ads and social media to enhance your brand's reach and engagement.",
 		"privacy.wip": "Work in progress",
 		"privacy.wip.content": "This page will be updated soon",
+		"privacy.title": "Privacy Policy",
+		"privacy.updated": "Last updated 01 Jan 2025",
+		"privacy.intro": "We respect your privacy. We only collect the minimum necessary information to run this website and our running club activities.",
+		"privacy.data": "If you register for membership or events, we may collect your name and contact details. We use this information only to communicate about Sexy Pace activities and we do not sell your data.",
+		"privacy.cookies": "We use basic cookies/analytics to keep the site running and understand usage. You can block cookies in your browser.",
+		"privacy.contact": "Questions? Use the contact form or find us on Instagram.",
+
+		"terms.title": "Terms",
+		"terms.updated": "Last updated 01 Jan 2025",
+		"terms.intro": "By using this website, you agree to act respectfully and comply with applicable laws. Content is provided as-is.",
+		"terms.use": "You may browse and share public pages. Don’t misuse the site, attempt to break security, or submit unlawful content.",
+		"terms.liability": "We provide the site without warranties. To the extent permitted by law, Sexy Pace is not liable for any damages arising from your use of the site.",
+		"terms.changes": "We may update these terms and policies from time to time. Continued use means you accept the changes.",
+		"terms.contact": "Questions? Use the contact form or find us on Instagram.",
 		"faqs.question1": "What's your favorite programming language?",
 		"faqs.answer1":
 			"We love TypeScript for its type safety and modern features, but we're also proficient in Python, JavaScript, and Go.",
@@ -194,6 +225,7 @@ Sexy pace: where you sweat a little but still look great in photos.`,
 		"footer.newsletter": "Subscribe to",
 		"footer.newsletter2": "our newsletter",
 		"footer.yourmail": "Your email",
+		"footer.instagram": "find us on instagram",
 		"events.title": "Events",
 		"events.subtitle": "Join exciting running events and communities. From weekly training sessions to major races - find your next adventure.",
 		"events.2026.title": "2026 Sexy Pace Events",
@@ -251,6 +283,20 @@ Sexy pace: where you sweat a little but still look great in photos.`,
 		"advertising.content": "Vores reklametjenester sigter mod at maksimere dit ROI gennem målrettede og effektive reklamekampagner. Vi specialiserer os i at skabe fængslende reklameindhold og strategier, der resonerer med dit publikum, ved at bruge forskellige platforme som Google Ads og sociale medier til at forbedre dit brands rækkevidde og engagement.",
 		"privacy.wip": "Arbejde i gang",
 		"privacy.wip.content": "Denne side vil blive opdateret snart",
+		"privacy.title": "Privatlivspolitik",
+		"privacy.updated": "Sidst opdateret 01. jan 2025",
+		"privacy.intro": "Vi respekterer dit privatliv. Vi indsamler kun det minimum, der er nødvendigt for at drive denne hjemmeside og vores klubaktiviteter.",
+		"privacy.data": "Hvis du tilmelder dig medlemskab eller events, kan vi indsamle navn og kontaktoplysninger. Vi bruger kun disse oplysninger til kommunikation om Sexy Pace og sælger dem ikke.",
+		"privacy.cookies": "Vi bruger basale cookies/analytics til at holde siden kørende og forstå brugen. Du kan blokere cookies i din browser.",
+		"privacy.contact": "Spørgsmål? Brug kontaktformularen eller find os på Instagram.",
+
+		"terms.title": "Vilkår",
+		"terms.updated": "Sidst opdateret 01. jan 2025",
+		"terms.intro": "Ved at bruge denne hjemmeside accepterer du at opføre dig respektfuldt og overholde gældende lovgivning. Indhold leveres som det er.",
+		"terms.use": "Du må frit bruge de offentlige sider. Misbrug ikke siden, forsøg ikke at omgå sikkerhed eller indsende ulovligt indhold.",
+		"terms.liability": "Siden stilles til rådighed uden garantier. I det omfang loven tillader det, er Sexy Pace ikke ansvarlig for skader som følge af brugen.",
+		"terms.changes": "Vi kan opdatere vilkår og politikker løbende. Fortsat brug betyder, at du accepterer ændringerne.",
+		"terms.contact": "Spørgsmål? Brug kontaktformularen eller find os på Instagram.",
 		"faqs.question1":
 			"Hvad er jeres foretrukne programmeringssprog?",
 		"faqs.answer1":
@@ -302,6 +348,7 @@ Sexy pace: where you sweat a little but still look great in photos.`,
 		"footer.newsletter": "Tilmeld dig",
 		"footer.newsletter2": "vores nyhedsbrev",
 		"footer.yourmail": "Din e-mail",
+		"footer.instagram": "find os på instagram",
 		"events.title": "Events",
 		"events.subtitle": "Deltag i spændende løbeevents og fællesskaber. Fra ugentlige træninger til store løb - find dit næste eventyr.",
 		"events.2026.title": "2026 Sexy Pace Events",
