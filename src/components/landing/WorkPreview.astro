@@ -24,6 +24,11 @@ const allProjects = (await getCollection("projects"))
 			slug: slug,
 		};
 	})
+	// Hide Blog and Shop cards on the landing page for now
+	.filter((prj) => {
+		const title = prj.data.title?.toLowerCase?.() || "";
+		return title !== "blog" && title !== "shop";
+	})
 	.sort((a, b) => Number(b.data.pubDate) - Number(a.data.pubDate));
 ---
 

@@ -1,0 +1,42 @@
+---
+const title = 'Social Runs';
+---
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <!-- Clerk JS for optional authenticated identity on RSVP -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key={import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY}
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js">
+    </script>
+    <script>
+      // @ts-ignore
+      window.addEventListener('load', async () => {
+        try {
+          // @ts-ignore
+          if (window.Clerk) {
+            // @ts-ignore
+            await window.Clerk.load();
+          }
+        } catch (e) { /* noop */ }
+      });
+    </script>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 2rem; }
+      label { display: grid; gap: .4rem; }
+      input, textarea, button { padding: .6rem .8rem; }
+      ul { display: grid; gap: 1.25rem; padding: 0; list-style: none; }
+      li { border: 1px solid #ddd; padding: 1rem; border-radius: .6rem; }
+      img { max-width: 100%; height: auto; border-radius: .4rem; }
+      .row { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

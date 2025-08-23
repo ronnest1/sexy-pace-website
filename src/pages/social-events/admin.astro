@@ -1,0 +1,86 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import AdminEventForm from '../../components/AdminEventForm';
+import AdminRecentEvents from '../../components/AdminRecentEvents';
+import AdminEditEventForm from '../../components/AdminEditEventForm';
+import AdminEventsList from '../../components/AdminEventsList';
+import AdminHiddenEventsList from '../../components/AdminHiddenEventsList';
+---
+<BaseLayout>
+  <section class="section">
+    <div class="wrapper col-span-12 py-14">
+      <div id="admin-gate" class="mx-auto max-w-4xl rounded-lg border border-amber-300/60 bg-amber-50 px-4 py-3 text-center text-amber-800">Tjekker admin…</div>
+
+      <div id="admin-panel" class="mx-auto hidden max-w-6xl">
+        <header class="mb-8 flex items-center justify-between">
+          <h1 class="font-display text-4xl font-extrabold uppercase">Admin</h1>
+          <a href="/events" class="inline-flex items-center gap-2 rounded-full border border-pink-600 px-4 py-2 text-sm font-semibold text-pink-600 transition hover:bg-pink-50">← Til events</a>
+        </header>
+
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="mb-3 text-xl font-semibold">Opret event</h2>
+            <AdminEventForm client:load onCreated={() => window.location.reload()} />
+          </div>
+
+          <div>
+            <h2 class="mb-3 text-xl font-semibold">Rediger valgt</h2>
+            <AdminEditEventForm client:load />
+          </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="mb-3 text-xl font-semibold">Rediger / Skjul / Slet</h2>
+            <div class="mt-4 text-sm text-gray-800">
+              <AdminEventsList client:load />
+            </div>
+          </div>
+          <div>
+            <h2 class="mb-3 text-xl font-semibold">Skjulte events</h2>
+            <div class="mt-4 text-sm text-gray-800">
+              <AdminHiddenEventsList client:load />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h2 class="mb-3 text-xl font-semibold">Senest oprettede</h2>
+          <AdminRecentEvents client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const pk = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const gate = document.getElementById('admin-gate');
+  const panel = document.getElementById('admin-panel');
+  if (pk) {
+    const script = document.createElement('script');
+    script.setAttribute('data-clerk-publishable-key', pk);
+    script.src = 'https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
+    script.async = true;
+    script.addEventListener('load', async () => {
+      // @ts-ignore
+      const Clerk = window.Clerk;
+      await Clerk.load();
+      const u = Clerk.user;
+      const isAdmin = !!u?.publicMetadata?.admin;
+      if (!isAdmin) {
+        if (gate) gate.textContent = 'Adgang nægtet. Kun admins.';
+        panel?.classList.add('hidden');
+        return;
+      }
+      gate?.classList.add('hidden');
+      panel?.classList.remove('hidden');
+      initAdminLists();
+    });
+    document.head.appendChild(script);
+  } else if (gate) {
+    gate.textContent = 'Mangler PUBLIC_CLERK_PUBLISHABLE_KEY';
+  }
+
+  function initAdminLists() {}
+</script>

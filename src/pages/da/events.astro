@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { AstroSeoProps } from "@astrolib/seo";
 import { useTranslations } from "@/i18n/utils";
-import bgRun from "@/assets/images/authors/social-run.jpg";
+import EventList from "@/components/EventList";
 
 const t = useTranslations("da");
 
@@ -17,75 +17,13 @@ const seo: AstroSeoProps = {
 <BaseLayout seo={seo}>
 	<section class="section min-h-screen">
 		<div class="wrapper col-span-12 py-32">
-			<div class="mx-auto max-w-6xl text-center">
-				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl">{t("events.title")}</h1>
-				<div id="events-auth-gate" class="mt-8 text-xl text-gray-600"></div>
-				
-				<!-- 2026 Events Section -->
-				<div id="events-content" class="mt-16 hidden">
-					<h2 class="font-display text-3xl font-bold md:text-4xl mb-12">{t("events.2026.title")}</h2>
-					
-					<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-						<!-- Marathon -->
-						<div class="group relative h-72 overflow-hidden rounded-lg bg-neutral-900 text-left md:h-80 lg:h-96" style={`background-image: url(${bgRun.src}); background-size: cover; background-position: center;`}>
-							<div class="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50"></div>
-							<div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
-								<h3 class="text-2xl font-bold">{t("events.marathon.title")}</h3>
-								<p class="mt-1 text-sm md:text-base font-semibold text-pink-300">{t("events.marathon.date")}</p>
-								<p class="mt-3 max-w-prose text-sm md:text-base text-gray-100/90">{t("events.marathon.description")}</p>
-								<div class="mt-5">
-									<button class="inline-flex items-center rounded-full bg-pink-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-pink-500">
-										{t("events.register")}
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<!-- Half Marathon -->
-						<div class="group relative h-72 overflow-hidden rounded-lg bg-neutral-900 text-left md:h-80 lg:h-96" style={`background-image: url(${bgRun.src}); background-size: cover; background-position: center;`}>
-							<div class="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50"></div>
-							<div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
-								<h3 class="text-2xl font-bold">{t("events.halfmarathon.title")}</h3>
-								<p class="mt-1 text-sm md:text-base font-semibold text-pink-300">{t("events.halfmarathon.date")}</p>
-								<p class="mt-3 max-w-prose text-sm md:text-base text-gray-100/90">{t("events.halfmarathon.description")}</p>
-								<div class="mt-5">
-									<button class="inline-flex items-center rounded-full bg-pink-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-pink-500">
-										{t("events.register")}
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<!-- 10K Run -->
-						<div class="group relative h-72 overflow-hidden rounded-lg bg-neutral-900 text-left md:h-80 lg:h-96" style={`background-image: url(${bgRun.src}); background-size: cover; background-position: center;`}>
-							<div class="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50"></div>
-							<div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
-								<h3 class="text-2xl font-bold">{t("events.10km.title")}</h3>
-								<p class="mt-1 text-sm md:text-base font-semibold text-pink-300">{t("events.10km.date")}</p>
-								<p class="mt-3 max-w-prose text-sm md:text-base text-gray-100/90">{t("events.10km.description")}</p>
-								<div class="mt-5">
-									<button class="inline-flex items-center rounded-full bg-pink-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-pink-500">
-										{t("events.register")}
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<!-- Test Din Pace Konkurrence -->
-						<div class="group relative h-72 overflow-hidden rounded-lg bg-neutral-900 text-left md:h-80 lg:h-96" style={`background-image: url(${bgRun.src}); background-size: cover; background-position: center;`}>
-							<div class="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50"></div>
-							<div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
-								<h3 class="text-2xl font-bold">{t("events.pace.title")}</h3>
-								<p class="mt-1 text-sm md:text-base font-semibold text-pink-300">{t("events.pace.date")}</p>
-								<p class="mt-3 max-w-prose text-sm md:text-base text-gray-100/90">{t("events.pace.description")}</p>
-								<div class="mt-5">
-									<button class="inline-flex items-center rounded-full bg-pink-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-pink-500">
-										{t("events.register")}
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="mx-auto max-w-4xl">
+				<h1 class="font-display text-5xl font-bold md:text-6xl lg:text-8xl text-center">{t("events.title")}</h1>
+				<div class="mt-8 text-right">
+					<a id="admin-link" href="/social-events/admin" class="hidden inline-flex items-center gap-2 rounded-full border border-pink-600 px-4 py-2 text-sm text-pink-600 hover:bg-pink-50">Admin</a>
+				</div>
+				<div class="mt-10">
+					<EventList client:load />
 				</div>
 			</div>
 		</div>
@@ -94,44 +32,24 @@ const seo: AstroSeoProps = {
 
 <script>
 	const pk = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
-	const gate = document.getElementById("events-auth-gate");
-	const content = document.getElementById("events-content");
-	// @ts-ignore - dynamic Clerk from window
-	function renderGate(Clerk) {
-		const isSignedIn = !!Clerk?.user;
-		if (!gate || !content) return;
-		if (!isSignedIn) {
-			gate.innerHTML = `
-				<div class=\"mx-auto max-w-2xl text-left\">
-					<p class=\"text-gray-700\">Events er kun synlige for medlemmer. Tilmeld dig gratis for at deltage.</p>
-					<div class=\"mt-6 flex flex-wrap gap-3 justify-center md:justify-start\">
-						<button id=\"login-btn\" class=\"rounded-full bg-pink-600 px-6 py-2 text-white hover:bg-pink-500\">Log ind</button>
-						<button id=\"register-btn\" class=\"rounded-full border border-pink-600 px-6 py-2 text-pink-600 hover:bg-pink-50\">Registrer</button>
-					</div>
-				</div>`;
-			content.classList.add("hidden");
-			const loginBtn = document.getElementById("login-btn");
-			const registerBtn = document.getElementById("register-btn");
-			if (loginBtn && registerBtn && Clerk) {
-				loginBtn.addEventListener("click", () => Clerk.openSignIn());
-				registerBtn.addEventListener("click", () => Clerk.openSignUp());
-			}
-		} else {
-			gate.innerHTML = "";
-			content.classList.remove("hidden");
-		}
-	}
-	if (pk) {
-		const script = document.createElement("script");
-		script.setAttribute("data-clerk-publishable-key", pk);
-		script.src = "https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js";
+	const link = document.getElementById('admin-link');
+	if (pk && link) {
+		const script = document.createElement('script');
+		script.setAttribute('data-clerk-publishable-key', pk);
+		script.src = 'https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
 		script.async = true;
-		script.addEventListener("load", async () => {
+		script.addEventListener('load', async () => {
 			// @ts-ignore
 			const Clerk = window.Clerk;
 			await Clerk.load();
-			Clerk.addListener(() => renderGate(Clerk));
-			renderGate(Clerk);
+			const render = () => {
+				const u = Clerk.user;
+				const isAdmin = !!u?.publicMetadata?.admin;
+				if (isAdmin) link.classList.remove('hidden');
+				else link.classList.add('hidden');
+			};
+			Clerk.addListener(render);
+			render();
 		});
 		document.head.appendChild(script);
 	}
