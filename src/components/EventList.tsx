@@ -103,6 +103,7 @@ export default function EventList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     (async () => {
       const { data: evts } = await supabase
         .from('events')

@@ -35,7 +35,7 @@ export default function RsvpButton({ eventId, initialCount }:{ eventId: string; 
 
   // After we have or update userId, sync initial server state
   useEffect(() => {
-    if (!userId) return;
+  if (typeof window === 'undefined' || !userId) return;
     (async () => {
       // Fetch current going for this event+user
       const { data: rows } = await supabase
@@ -57,7 +57,7 @@ export default function RsvpButton({ eventId, initialCount }:{ eventId: string; 
   }, [userId, eventId]);
 
   async function toggle() {
-    if (!userId) {
+  if (typeof window === 'undefined' || !userId) {
       alert('Log ind for at deltage.');
       return;
     }
